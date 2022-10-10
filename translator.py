@@ -28,7 +28,7 @@ def arrayParse(x):
 def findType(x):
     joinedString = ""
     if arrayParse(x):
-        return " " 
+        return " "
     splitline = x.split()
     try:
         result = eval(splitline[-1])
@@ -40,11 +40,11 @@ def findType(x):
     print(str(type(result)), "line 37 in code")
     print (((str(type(result))).split())[-1], "line 38 in code")
     typing = ((str(type(result))).split())[1]
-    typeOutput = [] 
+    typeOutput = []
     for letter in typing:
         print(letter)
         if letter != '\"' and letter != '\'' and letter != '>':
-            typeOutput.append(letter) 
+            typeOutput.append(letter)
     typestring = joinedString.join(typeOutput)
     if typestring == 'str':
         return ("char", (len(splitline[-1]) - 2))
@@ -68,5 +68,3 @@ fileoutput.close()
 fileoutput = open('out.c', 'a')
 fileoutput.writelines(['\n', '\treturn 0;', '\n', '}'])
 fileoutput.close()
-
-
